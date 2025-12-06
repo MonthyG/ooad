@@ -67,6 +67,7 @@ class MainFrameBase : public wxFrame
 		wxButton* m_btnSearch;
 		wxButton* m_btnViewCart;
 		wxScrolledWindow* m_scrolledWindow;
+		wxGridSizer* m_productGrid; // <--- IT MUST BE HERE!
 
 	public:
 
