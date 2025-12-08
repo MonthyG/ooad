@@ -111,15 +111,15 @@ public:
         wxInitAllImageHandlers();
         this->SetTitle("Indonesian Perfume Store (Taiwan Branch)");
 
-        AddToInventory("Mykonos - Aphrodite", 450.00, "mykonos.jpg");
-        AddToInventory("HMNS - Orgsm", 480.00, "hmns.jpg");
-        AddToInventory("Saff & Co - S.O.T.B", 520.00, "saff.jpg");
-        AddToInventory("Carl & Claire - Black", 390.00, "carl.jpg");
-        AddToInventory("Oullu - Deep Dive", 410.00, "oullu.jpg");
-        AddToInventory("Fordive - Atlantis", 350.00, "fordive.jpg");
-        AddToInventory("Onix - Scorpio", 290.00, "onix.jpg");
-        AddToInventory("Humans - Dark Rose", 460.00, "humans.jpg");
-
+        AddToInventory("Mykonos - Aphrodite", 450.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\aphro.jpg");
+        AddToInventory("HMNS - Orgsm", 480.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\hmns.jpg");
+        AddToInventory("Saff & Co - S.O.T.B", 520.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\saff.jpg");
+        AddToInventory("Carl & Claire - Black", 390.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\carl.jpg");
+        AddToInventory("Oullu - Deep Dive", 410.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\oullu.jpg");
+        AddToInventory("Fordive - Atlantis", 350.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\fordive.jpg");
+        AddToInventory("Onix - Scorpio", 290.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\onix.jpg");
+        AddToInventory("Mykonos - Dreamscape", 460.00, "C:\\Users\\stephen\\source\\repos\\Project OOAD\\mykonos.jpg")
+;
         DisplayProducts("");
     }
 
