@@ -24,8 +24,9 @@
 #include <wx/sizer.h>
 #include <wx/frame.h>
 #include <wx/scrolwin.h>
-#include <wx/listctrl.h>
+#include <wx/statline.h>
 #include <wx/choice.h>
+#include <wx/statbmp.h>
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -68,11 +69,13 @@ protected:
 	wxTextCtrl* m_searchBar;
 	wxButton* m_btnSearch;
 	wxButton* m_btnViewCart;
+	wxButton* m_btnMyOrders;
 	wxScrolledWindow* m_scrolledWindow;
 
 	// Virtual event handlers, override them in your derived class
 	virtual void OnSearchClick(wxCommandEvent& event) { event.Skip(); }
 	virtual void OnViewCartClick(wxCommandEvent& event) { event.Skip(); }
+	virtual void OnViewOrdersClick(wxCommandEvent& event) { event.Skip(); }
 
 
 public:
@@ -91,13 +94,14 @@ class CartFrameBase : public wxFrame
 private:
 
 protected:
-	wxListCtrl* m_cartList;
-	wxButton* m_btnPay;
-	wxButton* m_btnRemove;
+	wxScrolledWindow* m_scrolledCartItems;
+	wxStaticLine* m_staticline2;
+	wxStaticText* m_staticText13;
+	wxStaticText* m_lblTotal;
+	wxButton* m_btnCheckout;
 
 	// Virtual event handlers, override them in your derived class
 	virtual void OnPayClick(wxCommandEvent& event) { event.Skip(); }
-	virtual void OnRemoveClick(wxCommandEvent& event) { event.Skip(); }
 
 
 public:
@@ -121,10 +125,16 @@ protected:
 	wxStaticText* m_staticText8;
 	wxChoice* m_choicePayment;
 	wxStaticText* m_staticText9;
-	wxTextCtrl* m_textCtrl4;
+	wxStaticText* m_staticText10;
+	wxTextCtrl* m_txtStreet;
+	wxStaticText* m_staticText11;
+	wxTextCtrl* m_txtCity;
+	wxStaticText* m_staticText12;
+	wxTextCtrl* m_txtZip;
 	wxButton* m_btnConfirmOrder;
 
 	// Virtual event handlers, override them in your derived class
+	virtual void OnMethodChange(wxCommandEvent& event) { event.Skip(); }
 	virtual void OnConfirmClick(wxCommandEvent& event) { event.Skip(); }
 
 
@@ -133,6 +143,52 @@ public:
 	PaymentFrameBase(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Checkout & Payment"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize(400, 500), long style = wxDEFAULT_FRAME_STYLE | wxTAB_TRAVERSAL);
 
 	~PaymentFrameBase();
+
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class ProductDetailsFrameBase
+///////////////////////////////////////////////////////////////////////////////
+class ProductDetailsFrameBase : public wxFrame
+{
+private:
+
+protected:
+	wxStaticBitmap* m_bmpProduct;
+	wxStaticText* m_lblTitle;
+	wxStaticText* m_lblPrice;
+	wxButton* m_btnAddCart;
+	wxStaticLine* m_staticline3;
+	wxStaticText* m_staticText17;
+	wxTextCtrl* m_txtDesc;
+
+	// Virtual event handlers, override them in your derived class
+	virtual void OnAddClick(wxCommandEvent& event) { event.Skip(); }
+
+
+public:
+
+	ProductDetailsFrameBase(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Product Details"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize(800, 600), long style = wxDEFAULT_FRAME_STYLE | wxTAB_TRAVERSAL);
+
+	~ProductDetailsFrameBase();
+
+};
+
+///////////////////////////////////////////////////////////////////////////////
+/// Class OrderHistoryFrameBase
+///////////////////////////////////////////////////////////////////////////////
+class OrderHistoryFrameBase : public wxFrame
+{
+private:
+
+protected:
+	wxScrolledWindow* m_scrolledOrderHistory;
+
+public:
+
+	OrderHistoryFrameBase(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize(500, 300), long style = wxDEFAULT_FRAME_STYLE | wxTAB_TRAVERSAL);
+
+	~OrderHistoryFrameBase();
 
 };
 
